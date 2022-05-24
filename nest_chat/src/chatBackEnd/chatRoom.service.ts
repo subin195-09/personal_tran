@@ -26,6 +26,7 @@ export class ChatRoomService {
       cheifId: client.id,
       roomName,
     };
+    console.log(this.chatRoomList);
     client.data.roomId = roomId;
     client.rooms.clear(); // 여러개의 room에 속해있을 수 있으므로 clear를 실행해준다.
     client.join(roomId);
@@ -37,6 +38,7 @@ export class ChatRoomService {
   }
 
   enterChatRoom(client: Socket, roomId: string): void {
+    console.log(roomId);
     client.data.roomId = roomId;
     client.rooms.clear();
     client.join(roomId);

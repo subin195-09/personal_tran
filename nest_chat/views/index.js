@@ -7,7 +7,7 @@ const myInfo = {
   },
 };
 
-const socket = io('http://localhost:2424', {
+const socket = io('ws://localhost:2424', {
   transports: ['websocket'],
 });
 socket.on('connect', () => {
@@ -96,7 +96,10 @@ $('.createChatRoom').on('click', () => {
 
 // 채팅방 입장
 $(document).on('click', '.enterChatRoom', () => {
-  const thisRoomId = $(this).attr('data-roomId');
+  const thisRoomId = $('.enterChatRoom').attr('data-roomId');
+
+  // console.log(thisRoomId);
+  // console.log(this);
   socket.emit('enterChatRoom', thisRoomId, (res) => {
     if (!res) return;
     myInfo.room = res;

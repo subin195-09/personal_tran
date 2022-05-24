@@ -13,9 +13,6 @@ import { setInitDTO } from './dto/chatBackEnd.dto';
 // 서버를 실행하게 되면 "서버주소:포트번호/네임스페이스" 에서 웹소켓 서버가 실행된다.
 @WebSocketGateway(2424, {
   transports: ['websocket'],
-  cors: {
-    origin: 'http://localhost:3000',
-  },
 })
 export class ChatBackEndGateway
   implements OnGatewayConnection, OnGatewayDisconnect
@@ -123,6 +120,7 @@ export class ChatBackEndGateway
   // 채팅방 들어가기
   @SubscribeMessage('enterChatRoom')
   enterChatRoom(client: Socket, roomId: string) {
+    console.log(roomId);
     // 이미 들어와 있는 방일 경우
     if (client.rooms.has(roomId)) {
       return;
