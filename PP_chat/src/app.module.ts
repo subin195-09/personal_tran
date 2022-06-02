@@ -8,6 +8,7 @@ import configuration from './configs/configuration';
 import TypeOrmConfigService from './configs/typeorm.config';
 import { AuthModule } from './auth/auth.module';
 import { ChatroomsModule } from './chatrooms/chatrooms.module';
+import { ChatroomsGateway } from './chatrooms/chatrooms.gateway';
 
 @Module({
   imports: [
@@ -24,6 +25,6 @@ import { ChatroomsModule } from './chatrooms/chatrooms.module';
     ChatroomsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, ChatroomsGateway],
 })
 export class AppModule {}

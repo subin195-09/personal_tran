@@ -10,9 +10,14 @@ const ViewWrapper = styled("div", {
   flexDirection: "row",
 });
 
+function Test() {
+  return <div>test</div>;
+}
+
 export function Home() {
   return (
     <ViewWrapper className="view">
+      <Test />
       <div>
         <ContainerNavMenu />
         <ContainerContents />
