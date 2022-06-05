@@ -200,7 +200,7 @@ export default class ChatroomsService {
 
 	// 방 검색하기
 	async searchChatroom(
-		searchKeyword, string,
+		searchKeyword: string,
 		page: number,
 		count: number,
 	): Promise<Array<ChatRoomResultDto>> {
