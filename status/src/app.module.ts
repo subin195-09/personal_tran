@@ -9,7 +9,6 @@ import TypeOrmConfigService from './configs/typeorm.config';
 import { AuthModule } from './auth/auth.module';
 import { ChatroomsModule } from './chatrooms/chatrooms.module';
 import { StatusModule } from './status/status.module';
-import { StatusModule } from './status/status.module';
 
 @Module({
   imports: [
